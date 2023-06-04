@@ -1,6 +1,6 @@
--- 
+--
 --  Sea el siguiente conjunto de tablas en una base de datos:
--- 
+--
 --    tbl0
 --    ------------------------
 --    K0  CHAR(1)
@@ -8,7 +8,7 @@
 --    c02 INT
 --    c03 CHAR(4)
 --    c04 FLOAT
---        
+--
 --    tbl1
 --    ------------------------
 --    K0  CHAR(1)
@@ -29,7 +29,7 @@
 --    c25 CHAR(5)
 --
 --  Escriba una consulta que retorne por cada letra de la
---  columna K0 de la tabla tbl1, el valor promedio de la 
+--  columna K0 de la tabla tbl1, el valor promedio de la
 --  columna c21 en la tabla tbl2, para aquellos registros
 --  con c13 mayor a 400.
 --
@@ -42,5 +42,5 @@
 --  4  E  555.323077
 --
 --  >>> Escriba su codigo a partir de este punto <<<
---  
-
+--
+SELECT tbl1.K0, avg(c21) FROM tbl1 JOIN tbl2 ON tbl1.K1=tbl2.K1 WHERE c13>400 GROUP BY K0
